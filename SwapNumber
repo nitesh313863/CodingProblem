@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class SwapNumber {
+    public SwapNumber() {
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextByte();
+        int b = sc.nextByte();
+        a += b;
+        b = a - b;
+        a -= b;
+        System.out.printf("A : " + a + " B : " + b);
+    }
+}
