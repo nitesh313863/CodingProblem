@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+class LogicSelectionSort {
+    LogicSelectionSort() {
+    }
+
+    public void SelectionSort(int[] arr) {
+        for(int i = 0; i <= arr.length - 2; ++i) {
+            int pos = i;
+            int min = arr[i];
+
+            int j;
+            for(j = i + 1; j <= arr.length - 1; ++j) {
+                if (arr[j] < min) {
+                    min = arr[j];
+                    pos = j;
+                }
+            }
+
+            j = arr[i];
+            arr[i] = arr[pos];
+            arr[pos] = j;
+        }
+
+    }
+}
+
+public class SelectionSortApp {
+    public SelectionSortApp() {
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the length Of Array : ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for(int i = 0; i <= arr.length - 1; ++i) {
+            System.out.print("Enter the Value :" + i + " ");
+            arr[i] = sc.nextInt();
+        }
+
+        LogicSelectionSort ob = new LogicSelectionSort();
+        ob.SelectionSort(arr);
+
+        for(int i = 0; i <= arr.length - 1; ++i) {
+            System.out.print(arr[i] + " ");
+        }
+
+    }
+}
