@@ -1,5 +1,33 @@
 import java.util.Scanner;
 
+class LogicClass {
+    LogicClass() {
+    }
+
+    public static int logicBinarySearch(int[] arr, int s) {
+        int low = 0;
+        int high = arr.length - 1;
+        int mid = (low + high) / 2;
+
+        while(low <= high) {
+            if (arr[mid] == s) {
+                return mid;
+            }
+
+            mid = (low + high) / 2;
+            if (s > arr[mid]) {
+                low = mid + 1;
+                high = high;
+            } else if (s < arr[mid]) {
+                low = low;
+                high = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+}
+
 public class BinarySearch {
     public BinarySearch() {
     }
