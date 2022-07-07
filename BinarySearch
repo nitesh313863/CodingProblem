@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class BinarySearch {
+    public BinarySearch() {
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter The Length Of Array");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        int s;
+        for(s = 0; s <= arr.length - 1; ++s) {
+            System.out.print("Index : " + s + "  ");
+            arr[s] = sc.nextInt();
+        }
+
+        System.out.print("Enter the Searching Value : ");
+        s = sc.nextInt();
+        LogicClass ob = new LogicClass();
+        int result = LogicClass.logicBinarySearch(arr, s);
+        if (result == -1) {
+            System.out.println("Key Not Found");
+        } else {
+            System.out.println("Key Is found Index : " + result);
+        }
+
+    }
+}
